@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời Trang Nam và Nữ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container mx-auto">
+    <!-- Thời Trang Nam -->
+    <h1 class="text-center text-red-700 mt-10">Thời Trang Nam</h1>
+    <div>
+        <div id="card-male" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        </div>
+    </div>
+
+    <!-- Thời Trang Nữ -->
+    <h1 class="text-center text-red-700 mt-10">Thời Trang Nữ</h1>
+    <div>
+        <div id="card-female" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        </div>
+    </div>    
+
+    <script>
+        // Danh sách sản phẩm Nam
+        var maleProducts = [
+            {
+                id: "1",
+                img: "https://360.com.vn/wp-content/uploads/2024/06/QJDTK502-2.jpg",
+                name: "Quần short kaki",
+                price: "370.000 VND",
+            },
+            {
+                id: "2",
+                img: "https://vitimex.com.vn/images/products/2023/07/29/original/Ao%20polo%20ATS3015_1.jpg",
+                name: "Quần baggy",
+                price: "398.000 VND",
+            },
+            {
+                id: "3",
+                img: "https://bizweb.dktcdn.net/100/287/440/products/ao-polo-nam-dep-mau-den-2.jpg?v=1627740423777",
+                name: "Quần tây",
+                price: "300.000 VND",
+            },
+            {
+                id: "4",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwWg2wwDYT3lzpbi-aShix6llcwMTdj1q1Yg&s",
+                name: "Quần jeans nam",
+                price: "300.000 VND",
+            },
+        ];  
+        
+        // Danh sách sản phẩm Nữ
+        var femaleProducts = [
+            {
+                id: "1",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwK2CDW209q1Be4WP1fAI422H--TlnKtjskw&s",
+                name: "Quần jeans nữ",
+                code: "KO0002",
+                price: "370.000 VND",
+                discount: "269.000 VND",
+            },
+            {
+                id: "2",
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD1TcVwAZLGNz-2Yty5RvVnqR1E0GLiLaX7g&s",
+                name: "Áo Khoác nữ",
+                code: "VN0002",
+                price: "369.000 VND",
+                discount: "249.000 VND",
+            },
+            {
+                id: "3",
+                img: "https://th.bing.com/th/id/OIP.EIkHRentVf24Edq-FHKzswHaHn?rs=1&pid=ImgDetMain",
+                name: "Áo Phông nữ",
+                code: "US0002",
+                price: "360.000 VND",
+                discount: "159.000 VND",
+            },
+        ];
+
+        // Hiển thị sản phẩm Nam
+        var cardMale = document.getElementById("card-male");
+        for (var i = 0; i < maleProducts.length; i++) {
+            cardMale.innerHTML += `
+            <div class="border border-gray-300 p-2 max-w-xs">
+                <img src="${maleProducts[i].img}" class="w-full h-64 object-cover">
+                <h3 class="text-center font-semibold">${maleProducts[i].name}</h3>
+                <p class="text-center">${maleProducts[i].price}</p>
+                <button class="bg-blue-700 text-white py-2 px-4 rounded mt-2 cursor-pointer">Đặt mua</button>
+            </div>
+            `;
+        }
+
+        // Hiển thị sản phẩm Nữ
+        var cardFemale = document.getElementById("card-female");
+        for (var i = 0; i < femaleProducts.length; i++) {
+            cardFemale.innerHTML += `
+            <div class="border border-gray-300 p-4">
+                <img src="${femaleProducts[i].img}" alt="" class="w-full h-64 object-cover">
+                <div class="flex justify-between mt-2">
+                    <h3>${femaleProducts[i].name}</h3>
+                    <h3>-</h3>
+                    <h3>${femaleProducts[i].code}</h3>
+                </div>          
+                <div class="flex justify-between mt-2">
+                    <p class="text-red-600 font-bold">${femaleProducts[i].discount}</p>
+                    <p class="line-through text-gray-500">${femaleProducts[i].price}</p>
+                </div>
+                <button class="bg-red-600 text-white py-2 px-4 rounded mt-2">Đặt mua</button>
+            </div>
+            `;
+        }
+    </script>
+</body>
+</html>
